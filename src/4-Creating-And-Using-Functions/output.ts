@@ -96,7 +96,13 @@ function runTheLearningSamples() {
   ];
 
   function getProductNames(): string[] {
-    return sampleProducts.map((p) => p.name);
+    // Many ways to do this
+    // 1. Get object, get property
+    // return sampleProducts.map((p) => p.name);
+    // 2. Parameter destructure
+    // return sampleProducts.map(({name}) => name);
+    // 3. Get explicit type of object, get property
+    return sampleProducts.map((p: ProductType) => p.name);
   }
 
   console.log(`${prefix} return array`);
